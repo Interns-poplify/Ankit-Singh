@@ -1,0 +1,82 @@
+<div class="container ablack" style="padding-top:50px">
+   
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-xs-12">  
+      
+        <p class="title"><%= @article.title%> <% if current_author== @article.author %>
+<%= link_to 'Edit', edit_article_path(@article), style:"font-size:12px"%>
+<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Really delete the article?"}, style:"font-size:12px"%><%end%></p>    
+         <%= image_tag @article.image.url(:medium), class: "img-responsive" %>
+         
+         
+         <p style="margin-top:10px"><%= @article.body %></p>
+         <div class="col-lg-3 col-md-3 col-xs-5" style="font-size:12px; padding-left:0px;"><i class="fa fa-tags fa-2x ff">:&nbsp;</i><% @article.tags.each_with_index do |tag,index| %>
+               <% if index > 0 %>
+               ,
+               <% end %>
+               <%= link_to tag.name, tag_path(tag) %>
+               <%end%>
+            </div>
+         
+            <span class="f" style="    margin-left: 30px; float:right;"><a href=""><i class="fa fa-twitter-square ff"></i></a>
+        
+
+        <!-- Google Plus -->
+       
+            <a href="" class="fff"><i class="fa fa-google-plus-square ff" style="margin-left:10px;"></i></a>
+        
+
+        <!-- Facebook -->
+        
+            <a href="" class="ffff"><i class="fa fa-facebook-square ff" style="margin-left:10px;"></i></a>
+       
+        <!-- LinkedIn -->
+        
+            <a href="" class="fffff"><i class="fa fa-linkedin-square ff" style="margin-left:10px;"></i></a></span>
+        
+
+        
+     
+      
+    </div>
+
+<div class="col-lg-4 col-md-4 col-xs-12"><h5 style="margin-top:8px; margin-left:15px; font-weight:600; color:grey;">ABOUT AUTHOR</h5>
+
+<div class="col-md-6 col-xs-12"><%= image_tag @article.author.photo.url(:medium), class: "img-responsive", style: "float:left"%><div class="row"><div class="col-md-8 col-xs-12"><a href="http://www.facebook.com" class="ffff"><i class="fa fa-facebook-square"></i></a><a href="http://www.twitter.com" class="f"><i class="fa fa-twitter-square" style="margin-left:15px; margin-top:7px;"></i></a><a href="http://in.linkedin.com" class="fffff"><i class="fa fa-linkedin-square" style="margin-left:15px"></i> </a></div></div></div>
+    <div class="col-md-6 col-xs-12;" style=" font-size: 13px;"><h5 style="margin-top:0px; font-size:16px; margin-bottom:3px;"><%=link_to @article.author.name,profile_path(@article.author_id)%></h5>
+ <p style="font-size:12.5px">He is both a hardworker & smartworker since his engineering days at  University. Up to speed on the tech and innovations front, he is so good at his work at office time and also college..... &nbsp;<%=link_to "More",profile_path(@article.author_id)%>  </p></div>
+
+</div>
+
+    <div class="col-lg-4 col-md-4 col-xs-12"><h5 style="padding-bottom:5px;
+    margin-top: 60px;
+    float: left;
+    font-weight: 600;
+        margin-left: 13px;
+    ">SIMILAR POST</h5>
+     <%@articles.each do |article|%>
+        <div class="col-md-12 col-xs-12">
+         
+        <div class="col-md-4 col-xs-4" style="padding-left:0px">
+          <p><%= image_tag article.image.url(:small), class: "img-responsive", style: "height:59px" %></p></div>
+          <div class="col-md-8 col-xs-7" style="padding-left:10px; bottom:5px;"><%= link_to article.title, article_path(article),class: 'article_title'%></p>
+          <p style="font-size:10px"><%= l article.created_at, :format => :sample %></p></div>
+          
+        </div>
+        <%end%>
+        
+        
+
+      
+    </div><!--col-md-4 finish-->
+    <div>
+      
+    Content  : <%= rating_for @article, "content", stars: 5,disable_after_rate: false, cancel_hint: 'Cancel this vote!'  %>
+Visuality : <%= rating_for @article, "visuality", stars: 5,disable_after_rate: false, cancel_hint: 'Cancel this vote!'  %>
+Writer : <%= rating_for @article, "writer", stars: 5,disable_after_rate: false, cancel_hint: 'Cancel this vote!'  %>
+</div>
+
+
+    
+
+    </div></div>

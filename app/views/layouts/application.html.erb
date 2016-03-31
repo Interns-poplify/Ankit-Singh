@@ -1,14 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myblogger</title>
+  <title>My Blogger</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="animate.min.css">
 </head>
-<body>
+<body><div class="loaderfullpage">
+<div class="loading">
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+  <div class="loading-bar"></div>
+ 
+</div></div>
+<%if notice%>
+<div class="notice-wrapper">
+<p class="notice cool-link"><%=notice%></p></div>
+<%end%>
+      <% if author_signed_in? %>
+           
+                <%= render 'shared/navbar'%>
+                
+      <% else %>
+      <%= render 'shared/navbar'%>
+      <%= render "devise/sessions/new" %>
+    <% end %>
+<div id="container">
+ <div id="content">
+      <div class="appyield">
+      <%= yield %></div></div></div>
 
-<%= yield %>
+  <a href="#" class="back-to-top">Back To Top</a>    
+ <div id="footer">       
+<footer>  
+<div class="container demo-container">
+                <div class="row pad">
+                <div class="col-md-7 col-xs-12">
+                <p style="color: white;
+    font-size: 12px; margin-top: 15px; letter-spacing:.3px;"><span style="text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;"><a href="/articles">Byron</a></span> is a leading global media company that informs, inspires and entertains the digital generation. Bryon redefining storytelling by documenting and shaping the digital revolution in a new voice, new formats and cutting-edge technologies to a uniquely dedicated audience of 45 million monthly unique visitors and 26 million social followers.</p></div>
+                <div class="col-md-5 hidden-xs" style="margin-top:25px; text-align:right;">
+                <span class="f"><a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-2x fof"></i></a>
+        
 
+        <!-- Google Plus -->
+            
+            <a href="http://plus.google.com" class="fff"><i class="fa fa-google-plus-square fa-2x fof" style="margin-left:40px;"></i></a>
+        
+
+        <!-- Facebook -->
+        
+            <a href="http://www.facebook.com" class="ffff"><i class="fa fa-facebook-square fa-2x fof" style="margin-left:40px;"></i></a>
+       
+        <!-- LinkedIn -->
+        
+            <a href="" class="fffff"><i class="fa fa-linkedin-square fa-2x fof" style="margin-left:40px;"></i></a></span>
+
+        </div>
+
+                <div class="col-md-6 col-xs-8">
+                <p class="footerp1"> © 2016. All Rights Reserved </p></div>
+                
+                <div class="col-md-6 hidden-xs">
+                <p class="footerp1" style="float:right"> Designed in collaboration with Ruby & Bootstrap </p></div>
+                </div></div>
+</footer>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('.notice-wrapper').fadeOut("slow",function(){
+        $(this).remove();
+  })
+}, 2500);
+});
+
+$(document).ready(function(){
+  $(".loaderfullpage").fadeOut(4000);
+});
+
+var amountScrolled = 300;
+ $(window).scroll(function(){
+  if ($(window).scrollTop() > amountScrolled){
+  $('a.back-to-top').fadeIn('slow');
+} else{
+  $('a.back-to-top').fadeOut('slow');
+}
+});
+
+ $('a.back-to-top').click(function() {
+  $('html, body').animate({
+    scrollTop: 0
+  }, 700);
+  return false;
+});
+
+
+</script>
 </body>
 </html>

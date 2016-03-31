@@ -1,0 +1,13 @@
+
+<%= render partial: 'articles/articleshow'%>
+
+<div class="container">
+<div class="col-md-8" style="padding-left:0px"><h4><%=@article.comments.size%> Comments:</h4>
+
+<div class="comments"><%= render partial: 'articles/comment', collection: @article.comments %>
+</div>
+<% if  author_signed_in?%> 
+<%= render partial: 'comments/form' %>
+<%end%></div>
+</div>
+

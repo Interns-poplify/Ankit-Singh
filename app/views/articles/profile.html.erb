@@ -1,0 +1,33 @@
+<div class="container" style="padding-top:60px">
+<div class="col-md-10">
+<div class="col-md-3">
+<%= image_tag @author.photo.url(:medium), style:"margin-left:15px;"%></div>
+<div class="col-md-6 col-xs-12"><h4 style="margin-top:0px; margin-left:15px; font-weight:600;">Hello, I am <%=@author.name%></h4>
+<div class="col-md-12"><p style="letter-spacing:.2px">He is both a hardworker & smartworker since his engineering days at  University. Up to speed on the tech and innovations front, he handsomely manages the entire technology backbone, development and training at Bryon. A true technology geek that love technology! </p>
+<a href="http://facebook.com"><i class="fa fa-facebook-official fa-2x" style="margin-top:13px; color:#d82039"></i></a>&nbsp;<a href="http://twitter.com"><i class="fa fa-twitter-square fa-2x" style="margin-left:10px; margin-top:13px; color:#d82039;"></i></a><%if author_signed_in?%><%if current_author.name == @author.name%>
+<span class="rambo"><%=link_to "Edit profile",edit_author_registration_path, style:"border: 1px solid #d82039;
+    padding: 8px 20px; background-color:#d82039; float:right; font-size:12px; margin-top:8px;"%></span></p><%end%><%end%>
+</div></div>
+<div class="col-md-3" style="text-align:center; margin-top:20px;"><div class="col-md-6 col-xs-6"><em style="font-size:40px; color: #d82039;"><%=@author.articles.count%></em><hr style="margin:10px"><p>Articles</p></div>
+<div class="col-md-6 col-xs-6"><em style="font-size:40px; color: #d82039;"><%=@author.comments.count%></em><hr style="margin:10px"><p>Comments</p></div></div>
+<div class="col-md-10" style="margin-top:50px">
+
+
+
+
+	<%@author.articles.each do |abc|%>
+	<div class="col-md-6">
+	<%= image_tag abc.image.url(:medium), class: "img-responsive", style:"height:210px" %>
+</div>
+<div class="col-md-6"><p class="title"><%= link_to abc.title, article_path(abc)%></p>
+<p style="margin-top:10px"><%= truncate abc.body, length: 240 %></p>
+<p class="pp" style= "margin: 20px 0px 30px 0px;"><%= link_to 'Continue', article_path(abc), class: 'read' %></p><span class="edit"><% if current_author== abc.author %>
+<%= link_to 'Edit', edit_article_path(abc), style:"font-size:12px"%>
+<%= link_to 'Delete', article_path(abc), method: :delete, data: {confirm: "Really delete the article?"}, style:"font-size:12px"%></span><%end%></p><hr>
+</div>
+         
+<%end%></div></div>
+</div>
+
+
+

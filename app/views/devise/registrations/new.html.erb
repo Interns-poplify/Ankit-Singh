@@ -1,0 +1,40 @@
+<div class="container">
+<div class="col-md-8">
+<div class="col-md-12"> 
+<h3 style="color:#D82039">Create an account</h3>
+<p style="font-size:15px">It's free and always will be.</p></div>
+<div class="col-md-10" style="padding-left:0px;">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<div class="col-md-12 field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true,:style =>"padding:3px; width:100%" %>
+  </div>
+
+  <div class="col-md-12 col-xs-12 field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, :style =>"padding:3px; width:100%"%>
+  </div>
+
+  <div class="col-md-12 col-xs-12 field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", :style =>"padding:3px; width:100%" %>
+  </div>
+
+  <div class="col-md-12 col-xs-12 field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :style =>"padding:3px; width:100%" %>
+  </div>
+  
+   <div class="actions col-md-12 col-xs-12 bob">
+    <button type="button" class="btn btn-default login col-xs-12" style="
+                     margin-bottom: 15px; padding: 5px 18px;
+                     border-radius: 0px; margin-top:10px;">
+                  <%= f.submit "Sign Up" %></button>
+               </div>
+  </div>
+<% end %>
+</div></div></div>

@@ -1,0 +1,88 @@
+<div class="container">
+
+
+<h2 style="color:#D82039; margin-left:25px;">
+Edit <%= resource_name.to_s.humanize %></h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="col-md-4">
+  <div class="col-md-12"><%= f.label :photo, "Add Profile Image" %></div>
+  <% if current_author.photo.exists? %>
+     <div class="col-md-12 imagePreview" > <%= image_tag current_author.photo.url(:medium) %></div>
+
+
+
+  <%else%>
+
+<div class="col-md-12 imagePreview" >
+
+</div><% end %>
+ <div class="col-md-12" style=" margin-top
+ :20px; margin-bottom:20px;"> 
+  <%= f.file_field :photo %>
+</div>
+</div>
+<div class="col-md-8">
+<div class="col-md-12 field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true,:style =>"padding:3px; width:70%" %>
+  </div>
+
+  <div class="col-md-12 field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email,:style =>"padding:3px; width:70%"%>
+  </div>
+  
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="col-md-12 field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off",:style =>"padding:3px; width:70%" %>
+  </div>
+
+  <div class=" col-md-12 field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off",:style =>"padding:3px; width:70%" %>
+  </div>
+
+
+  <div class="col-md-12 field">
+    <%= f.label :current_password %> <i>( To confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off",:style =>"padding:3px; width:70%" %>
+  </div>
+ 
+
+  <div class="col-md-12 actions" style="margin-top:20px; margin-bottom:30px;">
+    <%= f.submit "Update" %>
+<%=link_to "Cancel", :back%>
+  </div>
+  <% end %>
+ 
+
+</div></div>
+ <!--<h3>Cancel my account</h3>
+
+<p>Unhappy? <%#= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>-->
+
+
+<script type="text/javascript">
+  $(function() {
+    $("#author_photo").on("change", function()
+    {
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+ 
+        if (/^image/.test( files[0].type)){ // only image file
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(files[0]); // read the local file
+ 
+            reader.onloadend = function(){ // set image data as background of div
+                $(".imagePreview").html("<img src='"+this.result+"' width='100%'>");
+            }
+        }
+    });
+});
+</script>

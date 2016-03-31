@@ -1,0 +1,47 @@
+
+<div class="container" style="margin-bottom:20px">
+<div class="wrapperr">
+<p style="color:black"><%=notice%></p></div>
+<div class="row">
+
+<div class="col-md-10" style="padding-left:0px;">
+<div class="col-md-5" style="padding-left:0px;">
+
+   
+  
+  <div class="col-md-12 col-xs-12" style="padding-left:0px;"><div class="col-md-2" style="
+    padding-left: 0px;"><%=image_tag comment.author.photo.url(:circle), style: "border-radius:50%"%></div>
+  <div class="col-md-2" style="padding-left:0px;"><%= comment.author_name %></div></div>
+  <div class="col-md-12" style="font-size:11px; margin-left: 44px;
+    bottom: 14px;
+"><%= l comment.created_at,:format => :sample%></div></div>
+  <div class="col-md-8" style="padding-left:0px">
+ <div class="col-md-12" style="padding-left:0px"><p style="margin-bottom:0px"><%=comment.body %></p></div></div></div></div>
+  <% if  author_signed_in?%> 
+      <% if  comment.author_name == current_author.username %> 
+
+          <%= link_to 'edit comment', edit_article_comment_path(:article_id=>@article.id,:id=>comment.id), style: "color:#D82039; font-size:11px;", :remote => true%> | 
+           <%= link_to 'Remove comment', article_comment_path(:id=>comment.id,:article_id=>@article.id),style: "color:#D82039; font-size:11px;", method: :delete,data: {confirm: "Really want to delete the comment?"}, :remote => true, :class => 'delete_pony'%>
+           <%else%>
+           <%if current_author.id == @article.author_id%>
+           <%= link_to 'Remove comment', article_comment_path(:id=>comment.id,:article_id=>@article.id),style: "color:#D82039; font-size:11px;", method: :delete,data: {confirm: "Really want to delete the comment?"}, :remote => true%>
+          <%end%>
+          <%end%>
+          <%end%>
+
+         
+ </div>   
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('.wrapperr').fadeOut("slow",function(){
+        $(this).remove();
+  })
+}, 2500);
+});
+
+
+</script>  
+ 
+

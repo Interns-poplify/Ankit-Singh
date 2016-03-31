@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom:0px">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header"><a href="/articles">
+    <img class="animated infinite pulse" src="/images/logo.png" alt="rss feed" style="height: 40px;
+    margin-top: 7px;"></a>
+   
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <% if author_signed_in? %>
+     <ul class="nav navbar-nav navbar-right">
+        <li class="cool-link"><a href="/articles/new">Create Article</a></li>
+        <li class="cool-link"><%=link_to current_author.name,profile_path(current_author.id)%></li>
+        <li class="cool-link"><a href="/authors/sign_out" data-method="delete">Sign Out</a></li>
+       
+      </ul>
+      <%else%>
+      <ul class="nav navbar-nav navbar-right">
+      <li class="cool-link"><a href="/">Home</a></li>
+        <li class="cool-link"><a href="/authors/sign_up">Sign Up</a></li>
+        <li class="cool-link" style="margin-right:15px;"><a href="" data-toggle="modal" data-target="#myModal">Sign In</a></li>
+        
+       
+      </ul>
+      <%end%>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="col-md-12" style="background-color:#d82039; width:100%; height:52.5px;">
+</div>
+
+
+

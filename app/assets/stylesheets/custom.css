@@ -1,0 +1,419 @@
+
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+  border-right:0; 
+  box-shadow:0 0 0; 
+  border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.navbar-inverse .navbar-nav > li > a{
+  font-weight: 500;
+  color: white;
+
+}
+
+.cancel{margin-top: 20px;
+    float: right;
+    border: 1px solid #D82039;
+    background-color: #D82039;
+    margin-left: 35px;
+    margin-right: 15px;
+    padding: 10px 20px 8px 20px;}
+.cancel a{color: white;}
+
+.cool-link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: white;
+    transition: width .6s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    //transition: width .6s;
+}
+.btn input[type=text] {padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+input[type=text]:focus {border-color:#333; }
+
+.modal-body-left input[type=submit] {padding:2px 5px; background:transparent; border:0 none;
+    cursor:pointer;
+    
+    color:white;
+     }
+.bob input[type=submit] {padding:2px 5px; background:transparent; border:0 none;
+    cursor:pointer;
+    
+    color:white;
+     }
+.aaaa input[type=submit] {padding:10px 15px; background:#d82039; border:0 none;
+    cursor:pointer;
+    
+    color:white;
+     }
+.aaaa input[type=file] {padding:10px 15px; background:#d82039; border:0 none;
+    cursor:pointer;
+    
+    color:white;
+     }
+.modal-body-left input[type=email]{width:100%;
+padding: 7px;}
+.modal-body-left input[type=password]{width: 100%;
+padding: 7px;}
+label{font-weight: 300;}
+
+a:hover{text-decoration: none;}
+.modal-footer a{float: left;}
+.modal-footer a:hover{border: 1px solid #D82039;
+       
+    background-color: #d82039;
+    color:white;}
+.abc{float: right;}
+.modal-header{background-color: #D82039;
+    color: white;}
+.navbar-inverse{background-color: #D82039;
+    color: white;
+    border-radius: 0px;
+    border:none;}
+
+
+.title{margin: 0px 0px 10px 0px;
+      
+       font-weight: 300px;
+       font-size: 18px;}
+.title a{color: black;}
+.read {border: 1px solid #D82039;
+       padding: 8px 15px 8px 15px;
+    background-color: #d82039;
+   }
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;}
+.what-new{border: 1px solid #d82039;
+    
+    color: white;
+    background-color: #d82039;
+    padding:17px 0px 17px 30px;
+    margin: 0px;}    
+.login{background-color: #d82039;
+    border-color:#d82039;}
+.login:hover{background-color: #d82039;
+    border-color:#d82039;}
+.login_modal_footer{margin-top:5px;}
+.login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }
+.form-group{position: relative;}
+.form-group .login-field-icon {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    transition: all 0.25s ease 0s;
+    padding-top: 2%;
+}
+.login-modal{
+    width:100%;
+    padding-bottom:20px;
+}
+.login_modal_header, .login_modal_footer {background: #00BB64 !important;color:#fff;}
+.modal-register-btn{margin: 4% 33% 4% 0% ;width:100%; text-align: center;}
+.login-modal input{height:40px; box-shadow: none; border:1px solid #ddd;}
+.modal-body-left{float:left; width:50%; padding-right:4%; border-right:4px solid #ddd;}
+.modal-body-right{float:right; width:47%;}
+.login-link{padding:0 20%;}
+.modal-social-icons{padding:0 10%;}
+.modal-icons{margin-left: -10px; margin-right: 20px;}
+.facebook, .twitter {width:100%;height:40px; padding-top:8px; margin-top:4%;} 
+.modal-icons{margin-left: -10px;}
+
+.twitter, .twitter:hover{ background-color: #00aced; border:2px solid #00aced;color: #fff; margin-top: 15px;}
+.facebook, .facebook:hover{background-color: #3b5999; border:2px solid #3b5999;color:#fff;}
+
+#social-icons-conatainer{position: relative;}
+#center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
+.modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
+#modal-launcher{margin: 30% 0 0 30%; }
+h1{border-bottom:5px solid #00BB64;}
+.ff{font-size: 1.4em !important;
+       color: #d82039;}
+.fof{color:white;}
+.fa-twitter{ margin-left: -25px;}
+.article_title{color: #333333;
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.2px;}
+.whats-new{border: 1px solid #d82039;
+    
+    color: white;
+    background-color: #d82039;
+    padding:10px 0px 10px 0px;
+    margin-top: 0px;} 
+.pad{margin-right: 0;
+      margin-left: 0;} 
+.footerp1{color: white;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+           } 
+.demo-container{width: 100%;
+background-color: #d82039;} 
+.share-btn {
+                display: inline-block;
+                color: #ffffff;
+                border: none;
+                padding: 0.5em;
+                width: 4em;
+                opacity: 0.9;
+                box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+                outline: none;
+                text-align: center;
+            }
+            .share-btn:hover {
+              color: #eeeeee;
+            }
+            .share-btn:active {
+              position: relative;
+              top: 2px;
+              box-shadow: none;
+              color: #e2e2e2;
+              outline: none;
+            }
+            .share-btn.ttwitter { background: #55acee; }
+            .share-btn.google-plus { background: #dd4b39; }
+            .share-btn. !importantffacebook { background: #3B5998; }
+            
+            .share-btn.linkedin    { background: #4875B4; }
+a{color:white;}
+.edit a{color:#d82039 !important; }
+
+.toggleHeading {
+  animation-delay: 0.9s;
+  -webkit-animation-delay: 0.5s;
+     -moz-animation-delay: 0.5s;
+       -o-animation-delay: 0.5s;
+     -moz-transition: none !important;
+     
+     
+     padding:10px 0px 10px 0px; 
+}
+.f i:hover{color:#56B0E3;}
+.fff i:hover{color:#DB4437;}
+.ffff i:hover{color: #3A5795;}
+.fffff i:hover{color:#333;}
+ul{list-style-type: none;}
+.notice-wrapper{position: absolute;
+    top: 0px;
+    z-index: 9999;
+    width: 100%;
+    background-color: #D82039;
+    text-align: center;}
+.notice{padding: 15px 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 500;}
+
+/*comments classes*/
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+#footer {
+ clear: both;
+ position: relative;
+ z-index: 10;
+ height: 3em;
+ margin-top: -3em;
+}
+#content { padding-bottom: 3em; }   
+.imagePreview {
+    width: 180px;
+    height: 175px; }
+.wrapperr{position: absolute;
+    top: 0px;
+    z-index: 9999;
+    width: 100%;
+  
+    text-align: center;} 
+.pp a:hover{
+  background-color: #ffffff;
+  color: #d82039;
+  border-color: #d82039;
+}
+.ablack a{color:black;}
+.ablack a:hover{color: #d82039 !important;}
+.titlea{ margin-top:10px;}
+.appyield{padding-top: 50px;}
+/*custom*/
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    
+        .toggleHeading{
+
+        font-size:13px;
+
+    }
+    .carousel-indicators{bottom:0px;}
+    .indexlogo{font-size:11px
+                ;
+                
+                
+               
+                text-align: center;
+                padding:7px 0px ;
+               
+                }
+    .tagname{font-size: 10px !important;}
+    .nano{width:25px;}
+    .titlea{
+      margin-left: 0px;}
+    .articlebody{font-size: 11px;}
+    .articlecontinue{}
+    .appyield{padding-top: 0px;}
+    .articletitle{margin-top: 10px;}
+    .date{margin-top: 30px;}
+    a.back-to-top{bottom:3px !important;}
+
+
+
+}
+@media only screen and (min-width: 900px) and (max-width: 1400px){
+  a.back-to-top{bottom: 75px !important;}
+}
+.rambo a:hover{background-color: #ffffff !important;
+    color: #d82039 !important;
+    border-color: #d82039 !important;}
+/*animation css*/
+a.back-to-top{
+  display: none;
+  width: 50px;
+  height: 50px;
+  text-indent: -9999px;
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 57px;
+  background: #d82039 url("http://www.cierzopublicidad.es/img/arrow-up.png") no-repeat center ;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-size: cover;
+}
+nav {
+    
+    position: relative;
+   
+    -moz-animation-name: dropHeader;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 1.5s;
+
+    -webkit-animation-name: dropHeader;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 1.5s;
+
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1.5s;
+}
+@-moz-keyframes dropHeader {
+    0% {
+        -moz-transform: translateY(-40px);
+    }
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+@-webkit-keyframes dropHeader {
+    0% {
+        -webkit-transform: translateY(-40px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+@keyframes dropHeader {
+    0% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/*loader*/
+.loaderfullpage{ position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;}
+.loading {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  z-index: 11111
+}
+.loading-bar {
+  display: inline-block;
+  width: 10px;
+  height: 27px;
+  border-radius: 4px;
+
+  margin-left: 5px;
+  animation: loading 1s infinite;
+}
+.loading-bar:nth-child(1) {
+  background-color: #d82039;
+  animation-delay: 0;
+}
+.loading-bar:nth-child(2) {
+  background-color: #d82039;
+  animation-delay: 0.09s;
+}
+.loading-bar:nth-child(3) {
+  background-color: #d82039;
+  animation-delay: .18s;
+}
+.loading-bar:nth-child(4) {
+  background-color: #d82039;
+  animation-delay: .27s;
+}
+.loading-bar:nth-child(5) {
+  background-color: #d82039;
+  animation-delay: .36s;
+}
+.loading-bar:nth-child(6) {
+  background-color: #d82039;
+  animation-delay: .45s;
+}
+.loading-bar:nth-child(7) {
+  background-color: #d82039;
+  animation-delay: .54s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  
+}

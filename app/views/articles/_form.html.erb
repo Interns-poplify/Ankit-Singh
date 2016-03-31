@@ -1,0 +1,68 @@
+
+
+<!-- <div class="row">
+ -->
+<%= form_for(@article, html: {multipart: true}) do |f| %>
+<ul>
+<% @article.errors.full_messages.each do |error| %>
+<li><%= error %></li>
+  <% end %>
+  </ul>
+  <div class="col-md-3">
+  <div class="col-md-12"><%= f.label :image, "Upload Image", :style =>"margin-top:10px" %></div>
+  <% if @article.image.exists? %>
+     <div class="col-md-12 imgPreview"> <%= image_tag @article.image.url(:small) %></div>
+
+
+
+  <%else%>
+
+<div class="col-md-12 imgPreview">
+
+</div><% end %>
+ <div class="col-md-12" style="margin-top
+ :20px">
+  <%= f.file_field :image %>
+</div></div>
+<div class="col-md-9" style="top:10px">
+  <div class="col-md-12"> 
+<%= f.label :title, "Title" %></br>
+<%= f.text_field :title, :style =>"padding:5px; width:100%"%>
+</div>
+ <div class="col-md-12">     <%= f.label :body, "Description" %></br>
+    <%= f.text_area :body, :style =>"height:200px; width:100%" %>
+  </div>
+   <div class="col-md-12"> 
+  <%= f.label :tag_list %></br>
+  <%= f.text_field :tag_list, :style =>"padding:3px; width:100%" %>
+</div>
+ 
+ <p class="cancel" style="float: right;"><%=link_to "Cancel", :back%></p>
+  <p class="aaaa" style="    margin-top: 20px;
+    float: right">
+    <%= f.submit %>
+  </p>
+  </div></div></div>
+<% end %></div>
+
+
+<script type="text/javascript">
+  $(function() {
+    $("#article_image").on("change", function()
+    {
+      alert("sdf");
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+ 
+        if (/^image/.test( files[0].type)){ // only image file
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(files[0]); // read the local file
+ 
+            reader.onloadend = function(){ // set image data as background of div
+              alert("sdf");
+                $(".imgPreview").html("<img src='"+this.result+"' width='100%'>");
+            }
+        }
+    });
+});
+</script>
